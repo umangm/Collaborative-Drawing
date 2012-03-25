@@ -1,0 +1,64 @@
+import java.net.*;
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+public class Server extends Thread {
+
+	Vector<Integer> Myvecx,Myvecy,Yourvecx,Yourvecy;
+	Vector<Character> Myvecmode,Yourvecmode;
+	ServerSocket serverSocket = null;
+	Socket clientSocket = null;
+	
+	public Server(Vector<Integer> Myvecx,Vector<Integer> Myvecy,Vector<Character> Myvecmode,Vector<Integer> Yourvecx,Vector<Integer> Yourvecy,Vector<Character> Yourvecmode){
+		this.Myvecx=Myvecx;
+		this.Myvecy=Myvecy;
+		this.Myvecmode=Myvecmode;
+		this.Yourvecx=Yourvecx;
+		this.Yourvecy=Yourvecy;
+		this.Yourvecmode=Yourvecmode;
+		this.start();
+	}
+	
+    public void run() {
+
+        try {
+            serverSocket = new ServerSocket(10000);
+        } catch (IOException e) {
+            System.err.println("Could not listen on port: 10000.");
+            System.exit(1);
+        }
+
+        try {
+            clientSocket = serverSocket.accept();
+        } catch (IOException e) {
+            System.err.println("Accept failed.");
+            System.exit(1);
+        }
+        
+        PrintWriter out=null;
+        BufferedReader in=null; 
+
+        try{
+        	out = new PrintWriter(clientSocket.getOutputStream(), true);
+        	in = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
+        } catch (IOException e) {
+            System.err.println("Accept failed.");
+            System.exit(1);
+        }
+        
+        (new Output(out, Myvecx, Myvecy, Myvecmode)).start();
+        (new Input(in, Yourvecx, Yourvecy, Yourvecmode)).start();
+        
+	}
+	
+     public void close(){   
+       try{
+		    clientSocket.close();
+		    serverSocket.close();
+        }catch (IOException e) {
+            System.err.println("Accept failed.");
+            System.exit(1);
+        }
+    }
+}
