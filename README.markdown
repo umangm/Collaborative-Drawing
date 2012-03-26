@@ -39,8 +39,14 @@ Install all the dependecies as mentioned above
 
 To run via terminal :
 
+* java -jar CollaborativeClient.jar		(for the client-side)
+* java -jar CollaborativeServer.jar		(for the server-side)
+
+Alternatively, you can change the permissions to make the jar files executable and open with some JRE.
+To change permissions, right click the files and check "Allow executing file as program" in the Permissions tab or type the following commands on the terminal:
+
 * chmod +x CollaborativeClient.jar		(for the Client-side)
-* chmod +x CollaborativeServer.jar		(for the Server-side)
+* chmod +x CollaborativeServer.jar		(for the server-side)
 
 
 
@@ -69,7 +75,7 @@ Authors
 Copyright and license
 ---------------------
 
-Copyright 2012 Saif Hasan
+Copyright 2012 Umang Mathur
 
 This is opensource. Anybobdy can copy, use or distribute this software.
 
