@@ -38,11 +38,5 @@ public class Output extends Thread{
 		    //if(a<0 || b<0) break;
 		}
         
-		/*try{
-			out.close();
-		} catch(Exception io){
-			io.printStackTrace();
-			System.err.println(io.getMessage());
-		}*/
 	}
 }

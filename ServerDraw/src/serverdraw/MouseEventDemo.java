@@ -112,10 +112,10 @@ public class MouseEventDemo extends JPanel implements Runnable, MouseListener, M
     
     
     void eventOutput(String eventDescription, MouseEvent e, int x, int y) {
-        textArea.setText(eventDescription + " detected on "
-                + e.getComponent().getClass().getName()
-                + "." + NEWLINE);
-        textArea.setCaretPosition(textArea.getDocument().getLength());
+        //textArea.setText(eventDescription + " detected on "
+          //      + e.getComponent().getClass().getName()
+            //    + "." + NEWLINE);
+        //textArea.setCaretPosition(textArea.getDocument().getLength());
         
         
     }

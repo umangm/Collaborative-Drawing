@@ -47,21 +47,7 @@ public class Input extends Thread{
 					e.printStackTrace();
 					System.err.println(e.getMessage());
 				}
-				/*if(!Yourvecx.isEmpty() && !Yourvecy.isEmpty())
-					try{
-						System.err.println("Input: ("+Yourvecx.firstElement().toString()+","+Yourvecy.firstElement().toString()+")");
-					} catch(Exception e){
-						e.printStackTrace();
-						System.err.println(e.getMessage());
-					}*/
-				//if(X.intValue()<0 || Y.intValue()<0) break;
 			}
 		}
-		/*try{
-			in.close();
-		} catch(IOException io){
-			io.printStackTrace();
-			System.err.println(io.getMessage());
-		}*/
 	}
 }

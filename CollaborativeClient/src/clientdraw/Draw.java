@@ -8,8 +8,6 @@ import java.util.Vector;
 public class Draw extends Thread{
 	int prevx;
 	int prevy;
-	//char prevmode;
-	//boolean flag=false;
 	Vector<Integer> Yourvecx;
 	Vector<Integer> Yourvecy;
 	Vector<Character> Yourvecmode;
@@ -52,10 +50,8 @@ public class Draw extends Thread{
                                     if(10>maxy)maxy=10;
                                     if(newmode=='d')
                                         g.drawLine(newx, newy, prevx, prevy);
-                                         //g.fillRect(prevx-5, prevy-5, maxx, maxy);
                                     else
                                         g.clearRect(newx-10, newy-10, 20, 20);
-                                    //g.fillRect(newx,newy,2,2);
                                     System.err.println("Draw2 :"+prevx+" "+prevy);
                                     prevx=newx;
                                     prevy=newy;
